@@ -1,11 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './Header.css'
 
-function App() {
-	return (
-		<div className="App">
-			<header className="App-header">
+class Header extends React.Component {
+	render() {
+		return (
+			<header className="App-header pb-4">
 				<img src={logo} className="App-logo" alt="logo"/>
 				<p>
 					Edit <code>src/App.js</code> and save to reload.
@@ -19,8 +19,8 @@ function App() {
 					Learn React
 				</a>
 			</header>
-		</div>
-	);
+		)
+	}
 }
 
-export default App;
+export default Header;
