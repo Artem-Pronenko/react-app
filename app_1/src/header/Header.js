@@ -1,11 +1,14 @@
 import React from 'react';
+import Nav from '../nav/Nav'
 import logo from './logo.svg';
 import './Header.css'
 
 class Header extends React.Component {
 	render() {
+		const nav = this.props.nav;
 		return (
 			<header className="App-header pb-4">
+				<Nav nav={nav}/>
 				<img src={logo} className="App-logo" alt="logo"/>
 				<p>
 					Edit <code>src/App.js</code> and save to reload.

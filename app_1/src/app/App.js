@@ -7,9 +7,10 @@ import Footer from '../footer/Footer'
 
 class App extends React.Component {
 	render() {
+		let nav = this.props.nav;
 		return (
 			<div className="App">
-				<Header/>
+				<Header nav={nav}/>
 				<Main/>
 				<Footer/>
 			</div>
