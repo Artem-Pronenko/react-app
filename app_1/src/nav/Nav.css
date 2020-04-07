@@ -26,6 +26,11 @@
     align-items: center;
     width: 95%;
     margin: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 22px;
+    right: 0;
 }
 
 .logo {
@@ -38,6 +43,7 @@
     text-decoration: none;
     color: #61dafb;
 }
+
 .logo-block {
     align-items: center;
     display: flex;

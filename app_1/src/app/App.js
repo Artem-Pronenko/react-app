@@ -1,10 +1,7 @@
 import React from 'react';
 import './App.css';
-import Header from '../header/Header'
-import Main from '../main/Main'
-import Form from '../form/Form'
-import Footer from '../footer/Footer'
-import Game from "../game/Game";
+import Nav from '../nav/Nav'
+import Header from "../header/Header";
 
 
 class App extends React.Component {
@@ -12,11 +9,8 @@ class App extends React.Component {
 		let nav = this.props.nav;
 		return (
 			<div className="App">
-				<Header nav={nav}/>
-				<Main/>
-				<Form/>
-				<Game/>
-				<Footer/>
+				<Header/>
+				<Nav nav={nav}/>
 			</div>
 		);
 	}

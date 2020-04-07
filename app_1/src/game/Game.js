@@ -7,7 +7,10 @@ class Game extends React.Component {
 		this.state = {
 			square: Array(9).fill(null),
 			mark: 0,
-			win: ''
+			win: '',
+			countX: 0,
+			countO: 0,
+			restartBtn: ''
 		};
 
 		this.wineLine = [
@@ -22,7 +25,17 @@ class Game extends React.Component {
 		]
 	}
 
+
+	restart = () => {
+		this.setState({square: Array(9).fill(null), mark: 0, win: ''});
+		this.setState({restartBtn: this.state.restartBtn = ''});
+	};
+
 	winGame = squareIndex => {
+		const btn = <div className={'reset-block'}>
+			<button onClick={this.restart} className={"restart-btn btn-secondary"}>Restart</button>
+		</div>;
+
 		for (let i = 0; i < this.wineLine.length; i++) {
 			let line = this.wineLine[i];
 
@@ -30,9 +43,22 @@ class Game extends React.Component {
 				&& this.state.square[line[1]] === squareIndex
 				&& this.state.square[line[2]] === squareIndex) {
 				this.setState({win: `"${squareIndex}"  win!`});
-				setTimeout(() => {
-					this.setState({square: Array(9).fill(null), mark: 0, win: ''})
-				}, 1000);
+				this.setState({
+					restartBtn: this.state.restartBtn = btn
+				});
+
+
+				if (squareIndex === 'X') {
+					this.setState({countX: this.state.countX + 1});
+					break;
+				} else {
+					this.setState({countO: this.state.countO + 1});
+				}
+			} else if (!this.state.square.includes(null)) {
+				this.setState({win: 'Draw'});
+				this.setState({
+					restartBtn: this.state.restartBtn = btn
+				});
 			}
 		}
 	};
@@ -53,13 +79,18 @@ class Game extends React.Component {
 	render() {
 		const square = this.state.square;
 		return (
-			<div className={'mt-3 mb-5'}>
+			<div className={'game-block'}>
 				<h3 className={'win'}>{this.state.win}</h3>
 				<div className="game-area">
 					{square.map((elem, index) => {
 						return <div key={index} onClick={this.clickSquare} data-square={index}
 										className="square">{elem}</div>
 					})}
+					{this.state.restartBtn}
+				</div>
+				<div className="who-win">
+					<p>X: {this.state.countX}</p>
+					<p>O: {this.state.countO}</p>
 				</div>
 			</div>
 		)

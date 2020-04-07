@@ -1,5 +1,6 @@
 
 .game-area {
+    user-select: none;
     border: 1px solid black;
     margin: auto;
     width: 300px;
@@ -7,6 +8,7 @@
     display: flex;
     flex-wrap: wrap;
     box-sizing: content-box;
+    position: relative;
 }
 
 .square {
@@ -25,4 +27,37 @@
     height: 50px;
     width: 100%;
     margin: auto;
+}
+
+.game-block {
+    background-color: #282c34;
+    color: #61dafb;
+    margin-top: -20px;
+}
+
+.who-win {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    font-size: 18px;
+}
+
+.restart-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.reset-block {
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 500px) {
+    .who-win {
+        top: 30%;
+    }
 }

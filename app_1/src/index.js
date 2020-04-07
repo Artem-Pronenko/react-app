@@ -5,9 +5,9 @@ import App from './app/App';
 import * as serviceWorker from './serviceWorker';
 
 const nav = {
-	'Главная': '/index.html',
-	'Документация': 'https://reactjs.org',
-	'Репозиторий': 'https://github.com/Artem-Pronenko/courses-react'
+	'Инфо': '/Main',
+	'Игра': '/Game',
+	'Форма': '/Form'
 };
 ReactDOM.render(
 	<React.StrictMode>

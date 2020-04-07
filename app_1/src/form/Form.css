@@ -1,0 +1,11 @@
+.form-group {
+    max-width: 350px;
+    margin: 0 auto 10px auto;
+    border: 1px solid #61dafb;
+    padding: 30px;
+    height: 150px;
+}
+
+.form-group input {
+    margin-bottom: 10px;
+}
