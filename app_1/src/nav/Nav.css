@@ -48,3 +48,9 @@
     align-items: center;
     display: flex;
 }
+
+@media screen and (max-width: 800px) {
+    .logo-block button {
+        display: none;
+    }
+}

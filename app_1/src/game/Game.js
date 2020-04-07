@@ -25,29 +25,45 @@ class Game extends React.Component {
 		]
 	}
 
+	toggleActiveClass = color => {
+		document.querySelectorAll('.square span').forEach(item => {
+			item.parentNode.style.backgroundColor = color;
+		});
+	};
+
 
 	restart = () => {
 		this.setState({square: Array(9).fill(null), mark: 0, win: ''});
-		this.setState({restartBtn: this.state.restartBtn = ''});
+		this.setState({restartBtn: ''});
+		this.toggleActiveClass('#282c34')
+
 	};
 
 	winGame = squareIndex => {
-		const btn = <div className={'reset-block'}>
+		const btnRestart = <div className={'reset-block'}>
 			<button onClick={this.restart} className={"restart-btn btn-secondary"}>Restart</button>
 		</div>;
 
 		for (let i = 0; i < this.wineLine.length; i++) {
 			let line = this.wineLine[i];
 
+			// условия победы
 			if (this.state.square[line[0]] === squareIndex
 				&& this.state.square[line[1]] === squareIndex
 				&& this.state.square[line[2]] === squareIndex) {
+
 				this.setState({win: `"${squareIndex}"  win!`});
-				this.setState({
-					restartBtn: this.state.restartBtn = btn
-				});
+				this.setState({restartBtn: btnRestart});
 
+				//оборачиваю выигрышную комбинацию в span, чтобы отследить ее по тегу
+				this.state.square[line[0]] = <span>{squareIndex}</span>;
+				this.state.square[line[1]] = <span>{squareIndex}</span>;
+				this.state.square[line[2]] = <span>{squareIndex}</span>;
 
+				// подсвечиваю выигрышную комбинацию
+				setTimeout(() => this.toggleActiveClass('#3bc85824'), 0);
+
+				// счетчик побед
 				if (squareIndex === 'X') {
 					this.setState({countX: this.state.countX + 1});
 					break;
@@ -55,24 +71,30 @@ class Game extends React.Component {
 					this.setState({countO: this.state.countO + 1});
 				}
 			} else if (!this.state.square.includes(null)) {
-				this.setState({win: 'Draw'});
-				this.setState({
-					restartBtn: this.state.restartBtn = btn
-				});
+				this.setState({win: 'Draw!'});
+				this.setState({restartBtn: btnRestart});
 			}
 		}
 	};
 
 	clickSquare = event => {
-		this.winGame();
 		let squareIndex = this.state.square,
 			elem = event.target.getAttribute('data-square');
 
 		if (squareIndex[elem]) return;
 		squareIndex = this.state.mark % 2 === 0 ? 'X' : 'O';
 		this.setState({mark: this.state.mark + 1});
-		this.state.square[elem] = squareIndex;
-		this.winGame(squareIndex);
+
+
+		const newSquare = [...this.state.square];
+		newSquare[elem] = squareIndex;
+		this.setState({
+				square: newSquare
+			},
+			() => {
+				this.winGame(squareIndex);
+			});
+
 
 	};
 

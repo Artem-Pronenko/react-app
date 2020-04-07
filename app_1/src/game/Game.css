@@ -23,6 +23,10 @@
     cursor: pointer;
 }
 
+.square img {
+    max-width: 70%;
+}
+
 .win {
     height: 50px;
     width: 100%;
@@ -56,8 +60,16 @@
     height: 100%;
 }
 
+.active {
+    background-color: #3bc85824;
+}
+
+.disable {
+    background-color: #282c34;
+}
+
 @media screen and (max-width: 500px) {
     .who-win {
-        top: 30%;
+        top: 25%;
     }
 }

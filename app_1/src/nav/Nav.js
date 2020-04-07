@@ -28,7 +28,7 @@ class Nav extends React.Component {
 		const nav = this.props.nav;
 		return (
 			<Router>
-				<nav className={'nav nav-block'}>
+				<nav className={'nav nav-block pt-2'}>
 					<div className="logo-block">
 						<a className={'logo'} href={''}>{this.state.logo ? 'Learn React' : 'React learned!)'}</a>
 						<button className={"btn btn-secondary  ml-3"} onClick={this.changeLogo}>Сhange logo</button>
