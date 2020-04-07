@@ -4,6 +4,7 @@ import Header from '../header/Header'
 import Main from '../main/Main'
 import Form from '../form/Form'
 import Footer from '../footer/Footer'
+import Game from "../game/Game";
 
 
 class App extends React.Component {
@@ -14,6 +15,7 @@ class App extends React.Component {
 				<Header nav={nav}/>
 				<Main/>
 				<Form/>
+				<Game/>
 				<Footer/>
 			</div>
 		);
