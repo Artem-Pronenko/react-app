@@ -1,0 +1,126 @@
+button
+  cursor: pointer
+  background: transparent
+  border: none
+
+.post
+  background-color: #fff
+  border-radius: 4px
+  box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8
+
+  &_author
+    margin-top: 6px
+    margin-left: 13px
+    width: 100%
+
+    & a
+      text-decoration: none
+
+      &:hover
+        text-decoration: underline
+
+    & h5
+      display: flex
+      justify-content: space-between
+
+  &_profile
+    margin-bottom: 15px
+
+  &_date
+    font-size: 12.3px
+    color: #939393
+
+  &_name
+    display: flex
+    align-items: flex-start
+    width: 100%
+    padding: 15px 20px 0
+
+  &_content
+    padding: 11px 20px 20px
+
+  &_text
+    line-height: 1.462
+    font-size: 13px
+    margin-bottom: 10px
+
+
+.author
+  display: block
+  font-size: 12.3px
+  font-weight: 600
+  text-decoration: none
+  color: #2a5885
+  margin-bottom: 2px
+
+
+.avatar
+  cursor: pointer
+  width: 55px
+  height: 50px
+
+  & img
+    border-radius: 50px
+
+.menu
+  width: 15px
+  cursor: pointer
+  background: transparent
+  border: none
+  background: url("icon/arrow.svg") no-repeat center
+  background-size: 13px
+
+.act
+  border-top: 1px solid #e7e8ec
+  padding: 13px 25px
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+  &_buttons
+    display: flex
+    justify-content: space-between
+    width: 150px
+
+  &_button
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.like
+  width: 28px
+  height: 28px
+  background: url("icon/like.svg") no-repeat center
+  background-size: 25px
+
+.counter
+  color: #67707a
+  margin-left: 6px
+  font-size: 15px
+
+.comments
+  width: 28px
+  height: 28px
+  background: url("icon/com.svg") no-repeat center
+  background-size: 25px
+
+.share
+  width: 28px
+  height: 28px
+  background: url("icon/share.svg") no-repeat center
+  background-size: 25px
+
+.views
+  color: #909399
+  font-size: 14px
+  display: flex
+  flex-direction: row-reverse
+
+  &:after
+    content: ""
+    display: block
+    width: 16px
+    height: 16px
+    background: url("icon/views.svg") no-repeat 50% /contain
+    margin-right: 6px
+    opacity: 0.5
