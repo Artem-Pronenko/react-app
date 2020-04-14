@@ -7,7 +7,6 @@ function Post() {
 	return (
 		<div className={`${c.post}  ${c.post_profile}`}>
 
-
 			<div className={c.post_name}>
 				<div className={c.avatar}>
 					<img src={avatar} alt="avatar"/>
@@ -51,12 +50,9 @@ function Post() {
 						</button>
 					</div>
 				</div>
-				<div className={c.views}>
-					68
-				</div>
+				<div className={c.views}>68</div>
 
 			</div>
-
 
 		</div>
 	)

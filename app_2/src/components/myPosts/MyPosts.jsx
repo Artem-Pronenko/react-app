@@ -12,7 +12,6 @@ function MyPosts() {
 			</div>
 
 			<Post/>
-			<Post/>
 
 		</div>
 	)

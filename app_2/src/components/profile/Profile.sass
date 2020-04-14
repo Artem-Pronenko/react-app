@@ -2,13 +2,34 @@
   display: inline-block
   background-color: #fff
   max-width: 250px
-  max-height: 250px
   padding: 15px
   border-radius: 4px
+  box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8
+
 
   & img
     width: 200px
     height: 200px
+    max-width: max-content
+    cursor: pointer
+    border-radius: 2px
+
+  &_buttons
+    display: flex
+    justify-content: space-between
+    margin-top: 8px
+
+  &_btn
+    background-color: #e5ebf1
+    padding: 7px 40px 8px
+    font-size: 13.5px
+    border-radius: 4px
+    color: #55677d
+
+  &_settings
+    padding: 7px 12px 8px
+    margin-left: 10px
+
 
 .column
   &_content
@@ -17,10 +38,13 @@
 
   &_info
     flex-basis: 72%
+    margin-left: 20px
 
 .profile
   &_info
     background-color: #fff
     height: 230px
     border-radius: 4px
+    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8
+
 
