@@ -1,11 +1,22 @@
-@import "node_modules/uikit/src/scss/variables-theme.scss"
-@import "node_modules/uikit/src/scss/mixins-theme.scss"
-@import "node_modules/uikit/src/scss/uikit-theme.scss"
+.app-wrapper
+  display: grid
+  grid-template-areas: "header header header" "container container container"
+  grid-template-rows: 60px 1fr
+  grid-template-columns: 2fr 10fr
+  grid-gap: 10px
 
+.header
+  grid-area: header
 
-.App
-  display: flex
-  flex-direction: column
-  align-items: center
-  background-color: lightblue
-  height: 100vh
+.nav
+  grid-area: nav
+
+.content
+  grid-area: content
+  background-color: darkgray
+
+.container
+  grid-area: container
+  grid-template-areas: "nav content content"
+  grid-template-columns: 2.5fr 10fr
+
