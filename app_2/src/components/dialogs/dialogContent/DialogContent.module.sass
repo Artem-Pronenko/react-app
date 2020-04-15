@@ -1,0 +1,90 @@
+@import "src/variables"
+
+.dialog
+  &_column
+    background-color: $white
+    flex-basis: 74%
+    height: 1000px
+    +border
+
+
+.search
+  display: block
+  margin: -24px auto 0 -1px
+  padding: 13px 37px
+  border-top: solid 15px #edeef0
+  border-left: solid 1px #edeef0
+  border-right: solid 1px #edeef0
+  border-bottom: 1px solid #d7d8db
+  position: fixed
+  max-width: 653px
+  width: 59%
+  z-index: 10
+
+
+  &::placeholder
+    color: $textGrey
+
+.dialog_search
+  & form
+    padding-bottom: 40px
+
+.message
+  &_card
+    background-color: $white
+    border-bottom: 1px solid #d7d8db
+
+
+.card
+  &_avatar
+    width: 50px
+    height: 50px
+    position: relative
+    overflow: hidden
+    border-radius: 50%
+
+    & img
+      max-width: max-content
+      border-radius: 50%
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      width: 110px
+
+  &_content
+    width: 95%
+    margin: auto
+    display: flex
+    align-items: flex-start
+    padding: 11px 0
+
+  &_wrap
+    font-size: 13px
+    margin-top: 7px
+    margin-left: 10px
+    flex-basis: 89%
+
+
+  &_preview
+    font-size: 13px
+    color: $textGrey
+
+  &_info
+    display: flex
+    justify-content: space-between
+    margin-bottom: 8px
+
+.author
+  &_name
+    font-size: 13px
+
+.time
+  color: $textGrey
+
+
+
+
+
+
+

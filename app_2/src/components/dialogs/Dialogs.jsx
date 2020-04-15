@@ -1,15 +1,12 @@
 import React from 'react';
 import c from './Dialogs.module.sass';
 import DialogsMenu from "./dialogMenu/DialogMenu";
+import DialogContent from "./dialogContent/DialogContent";
 
 const Dialogs = () => {
 	return (
 		<div className={c.dialog_wrap}>
-
-			<div className={c.dialog_column}>
-				dialog_column
-			</div>
-
+			<DialogContent/>
 			<DialogsMenu/>
 		</div>
 	)

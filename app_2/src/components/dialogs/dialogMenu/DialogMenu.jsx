@@ -1,9 +1,9 @@
 import React from 'react';
-import c from '../Dialogs.module.sass';
+import c from './DialogMenu.module.sass';
 
 const DialogsMenu = () => {
 	return (
-		<div className={c.dialog_menu}>
+		<div className={c.menu}>
 			<ul className={c.menu_list}>
 				<li className={c.menu_item}>
 					<a href="">Всѣ письма</a>
