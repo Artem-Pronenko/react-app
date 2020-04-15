@@ -3,8 +3,8 @@ import React from 'react';
 import './App.sass';
 import Header from "./components/header/Header";
 import Nav from "./components/nav/Nav";
-import Profile from "./components/profile/Profile";
-//import Dialogs from "./components/dialogs/Dialogs";
+//import Profile from "./components/profile/Profile";
+import Dialogs from "./components/dialogs/Dialogs";
 
 const App = () => {
 	return (
@@ -13,8 +13,8 @@ const App = () => {
 			<Header/>
 			<div className="container">
 				<Nav/>
-				<Profile/>
-				{/*<Dialogs/>*/}
+				{/*<Profile/>*/}
+				<Dialogs/>
 			</div>
 		</div>
 	)
