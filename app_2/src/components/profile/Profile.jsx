@@ -3,7 +3,7 @@ import './Profile.sass';
 import avatar from './avatar.jpg'
 import MyPosts from "../myPosts/MyPosts";
 
-function Profile() {
+const Profile = () => {
 	return (
 		<div className={'content'}>
 

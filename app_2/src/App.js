@@ -5,7 +5,7 @@ import Header from "./components/header/Header";
 import Nav from "./components/nav/Nav";
 import Profile from "./components/profile/Profile";
 
-function App() {
+const App = () => {
 	return (
 
 		<div className="app-wrapper">
