@@ -1,10 +1,10 @@
+@import "src/variables"
 .avatar
   display: inline-block
-  background-color: #fff
+  background-color: $white
   max-width: 250px
   padding: 15px
-  border-radius: 4px
-  box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8
+  +border
 
 
   & img
@@ -42,9 +42,8 @@
 
 .profile
   &_info
-    background-color: #fff
+    background-color: $white
     height: 230px
-    border-radius: 4px
-    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8
+    +border
 
 

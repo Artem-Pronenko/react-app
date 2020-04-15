@@ -1,17 +1,23 @@
+@import "src/variables"
+
+@mixin likeSettings
+  width: 28px
+  height: 28px
+  background-size: 25px
+
 button
   cursor: pointer
   background: transparent
   border: none
 
 .post
-  background-color: #fff
-  border-radius: 4px
-  box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8
+  background-color: $white
+  +border
 
   &_explain
     margin-left: 10px
     font-size: 12.3px
-    color: #939393
+    color: $textGrey
     font-weight: normal
 
   &_author
@@ -37,7 +43,7 @@ button
 
   &_date
     font-size: 12.3px
-    color: #939393
+    color: $textGrey
 
   &_name
     display: flex
@@ -59,7 +65,7 @@ button
   font-size: 12.3px
   font-weight: 600
   text-decoration: none
-  color: #2a5885
+  color: $textBlue
   margin-bottom: 2px
 
 
@@ -101,31 +107,26 @@ button
     &:hover
       opacity: 1
 
-.like
-  width: 28px
-  height: 28px
-  background: url("icon/like.svg") no-repeat center
-  background-size: 25px
 
 .counter
-  color: #67707a
+  color: $textGrey
   margin-left: 6px
   font-size: 15px
 
+.like
+  background: url("icon/like.svg") no-repeat center
+  +likeSettings
+
 .comments
-  width: 28px
-  height: 28px
   background: url("icon/com.svg") no-repeat center
-  background-size: 25px
+  +likeSettings
 
 .share
-  width: 28px
-  height: 28px
   background: url("icon/share.svg") no-repeat center
-  background-size: 25px
+  +likeSettings
 
 .views
-  color: #909399
+  color: $textGrey
   font-size: 14px
   display: flex
   flex-direction: row-reverse
