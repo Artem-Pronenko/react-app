@@ -12,7 +12,7 @@
   display: block
   margin: -24px auto 0 -1px
   padding: 13px 37px
-  border-top: solid 15px #edeef0
+  border-top: solid 24px #edeef0
   border-left: solid 1px #edeef0
   border-right: solid 1px #edeef0
   border-bottom: 1px solid #d7d8db
@@ -20,6 +20,11 @@
   max-width: 653px
   width: 59%
   z-index: 10
+
+@media screen and (max-width: 1120px)
+  .search
+    width: 59.4%
+    margin-top: -23px
 
 
   &::placeholder
@@ -31,8 +36,12 @@
 
 .message
   &_card
+    cursor: pointer
     background-color: $white
     border-bottom: 1px solid #d7d8db
+
+    &:hover
+      background: #f5f7fa
 
 
 .card
@@ -61,7 +70,7 @@
 
   &_wrap
     font-size: 13px
-    margin-top: 7px
+    margin-top: 5px
     margin-left: 10px
     flex-basis: 89%
 

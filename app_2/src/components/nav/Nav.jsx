@@ -1,28 +1,19 @@
-//
 import React from 'react';
 import c from './Nav.module.sass';
-import {NavLink} from "react-router-dom";
+import Link from "./Link";
 
 const Nav = () => {
 	return (
 		<nav className={c.nav}>
-			<ul className={c['nav-list']}>
-				<li className={c.item}>
-					<NavLink to="/profile">Мой Паспортъ</NavLink>
-				</li>
-				<li className={c.item}>
-					<NavLink to="">Извѣстiя</NavLink>
-				</li>
-				<li className={c.item}>
-					<NavLink to="/dialogs">Письма</NavLink>
-				</li>
-				<li className={c.item}>
-					<NavLink to="">Композицiи</NavLink>
-				</li>
-				<li className={c.item}>
-					<NavLink to="">Настройки</NavLink>
-				</li>
-			</ul>
+			<div className={c['nav-list']}>
+
+				<Link text={'Паспортъ'} originClass={c.profile} href={"/profile"}/>
+				<Link text={'Извѣстiя'} originClass={c.news} href={"/news"}/>
+				<Link text={'Письма'} originClass={c.dialogs} href={"/dialogs"}/>
+				<Link text={'Композицiи'} originClass={c.music} href={"/music"}/>
+				<Link text={'Настройки'} originClass={c.settings} href={"/settings"}/>
+
+			</div>
 		</nav>
 	)
 };
