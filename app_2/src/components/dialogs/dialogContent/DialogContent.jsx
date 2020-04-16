@@ -6,37 +6,28 @@ import avatar from "../../myPosts/post/postImg2.jpg";
 import avatar2 from "../../myPosts/post/postImg3.jpg";
 import avatar3 from "../../myPosts/post/postImg.jpg";
 
+const dataMessage = [
+	{id: 0, avatar: avatar, author: 'Андрей Ивановъ', message: 'Зашел!'},
+	{id: 1, avatar: avatar2, author: 'Ильдаръ Фазуловъ', message: 'Привет! я твой студент. Добавь в группу плиз'},
+	{id: 2, avatar: avatar3, author: 'Даня Ивановъ', message: 'Добавь в группу плиз'},
+	{id: 3, avatar: avatar, author: 'Сакенъ Макеновъ', message: 'Привет! я твой студент!'}
+];
 
 const DialogContent = () => {
+
+	const message = dataMessage.map(el => {
+		return <DialogMessage
+			key={el.id}
+			avatar={el.avatar}
+			author={el.author}
+			textMessage={el.message}/>
+	});
+
 	return (
 		<div className={c.dialog_column}>
 			<DialogSearch/>
 
-			<DialogMessage
-				avatar={avatar}
-				author={`Андрей Ивановъ`}
-				textMessage={`Зашел`}
-			/>
-			<DialogMessage
-				avatar={avatar2}
-				author={`Сакенъ Макеновъ`}
-				textMessage={`Привет! я твой студент. Добавь в группу плиз`}
-			/>
-			<DialogMessage
-				avatar={avatar3}
-				author={`Ильдаръ Фазуловъ`}
-				textMessage={`Ку`}
-			/>
-			<DialogMessage
-				avatar={avatar2}
-				author={`Сакенъ Макеновъ`}
-				textMessage={`Добавь в группу плиз`}
-			/>
-			<DialogMessage
-				avatar={avatar}
-				author={`Сакенъ Макеновъ`}
-				textMessage={`Привет! я твой студент. `}
-			/>
+			{message}
 
 		</div>
 	)
