@@ -6,9 +6,9 @@ const Nav = () => {
 	return (
 		<nav className={c.nav}>
 			<ul className={c['nav-list']}>
-				<li className={c.item}><a href="">Мой Паспортъ</a></li>
+				<li className={c.item}><a href="/profile">Мой Паспортъ</a></li>
 				<li className={c.item}><a href="">Извѣстiя</a></li>
-				<li className={c.item}><a href="">Письма</a></li>
+				<li className={c.item}><a href="/dialogs">Письма</a></li>
 				<li className={c.item}><a href="">Композицiи</a></li>
 				<li className={c.item}><a href="">Настройки</a></li>
 			</ul>
