@@ -18,6 +18,7 @@ const App = () => {
 					<Route path={'/dialogs'} component={Dialogs}/>
 				</div>
 			</div>
+
 		</BrowserRouter>
 	)
 };
