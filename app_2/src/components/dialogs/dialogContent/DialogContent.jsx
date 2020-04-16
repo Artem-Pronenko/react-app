@@ -1,10 +1,10 @@
 import React from 'react';
+import DialogSearch from "./dialogSearch/DialogSearch";
+import DialogMessage from "./dialogMessage/DialogMessage";
 import c from './DialogContent.module.sass';
-import DialogSearch from "./DialogSearch";
 import avatar from "../../myPosts/post/postImg2.jpg";
 import avatar2 from "../../myPosts/post/postImg3.jpg";
 import avatar3 from "../../myPosts/post/postImg.jpg";
-import DialogMessage from "./dialogMessage/DialogMessage";
 
 
 const DialogContent = () => {
@@ -16,7 +16,6 @@ const DialogContent = () => {
 				avatar={avatar}
 				author={`Андрей Ивановъ`}
 				textMessage={`Зашел`}
-
 			/>
 			<DialogMessage
 				avatar={avatar2}
@@ -34,7 +33,7 @@ const DialogContent = () => {
 				textMessage={`Добавь в группу плиз`}
 			/>
 			<DialogMessage
-				avatar={avatar2}
+				avatar={avatar}
 				author={`Сакенъ Макеновъ`}
 				textMessage={`Привет! я твой студент. `}
 			/>

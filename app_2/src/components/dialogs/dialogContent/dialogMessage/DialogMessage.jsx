@@ -1,5 +1,5 @@
 import React from 'react';
-import c from '../DialogContent.module.sass';
+import c from './DialogMessage.module.sass';
 
 
 const DialogMessage = ({avatar, textMessage, author}) => {
