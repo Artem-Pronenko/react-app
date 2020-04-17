@@ -13,7 +13,7 @@ const Post = ({date, text, imgUrl, like, comments, views, explain}) => {
 			<div className={c.post_content}>
 				<p className={c.post_text}>{text}</p>
 				<div className={c.post_img}>
-					<img src={imgUrl} alt="img"/>
+					{imgUrl ? <img src={imgUrl} alt="img"/> : ''}
 				</div>
 			</div>
 

@@ -52,9 +52,10 @@ const data = {
 };
 
 export const addPost = (text = '') => {
+	let id = data.profilePage.posts[0].id - 1;
 	const nevPosts = {
-		id: 3,
-		date: '17 апр. 2019',
+		id: id--,
+		date: '17 апр. 2020',
 		imgUrl: '',
 		like: '',
 		comments: '',
@@ -62,7 +63,7 @@ export const addPost = (text = '') => {
 		explain: '',
 		text: text
 	};
-	data.profilePage.posts.push(nevPosts);
+	data.profilePage.posts.unshift(nevPosts);
 	renderApp(data);
 
 };
