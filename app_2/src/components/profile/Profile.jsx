@@ -3,7 +3,7 @@ import './Profile.sass';
 import avatar from './avatar.jpg'
 import MyPosts from "./myPosts/MyPosts";
 
-const Profile = () => {
+const Profile = ({dataPost}) => {
 	return (
 		<div className={'content'}>
 
@@ -20,7 +20,7 @@ const Profile = () => {
 
 				<div className={'column_info'}>
 					<div className={'profile_info'}>name and profile info</div>
-					<MyPosts/>
+					<MyPosts posts={dataPost.posts}/>
 				</div>
 			</div>
 

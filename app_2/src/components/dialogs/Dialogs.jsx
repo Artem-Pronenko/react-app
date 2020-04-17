@@ -3,10 +3,10 @@ import c from './Dialogs.module.sass';
 import DialogsMenu from "./dialogMenu/DialogMenu";
 import DialogContent from "./dialogContent/DialogContent";
 
-const Dialogs = () => {
+const Dialogs = ({dataDialogs}) => {
 	return (
 		<div className={c.dialog_wrap}>
-			<DialogContent/>
+			<DialogContent dataMessage={dataDialogs.dataMessage}/>
 			<DialogsMenu/>
 		</div>
 	)
