@@ -1,7 +1,7 @@
 import React from 'react';
 import './Profile.sass';
 import avatar from './avatar.jpg'
-import MyPosts from "../myPosts/MyPosts";
+import MyPosts from "./myPosts/MyPosts";
 
 const Profile = () => {
 	return (
