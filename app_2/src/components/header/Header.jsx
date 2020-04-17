@@ -1,13 +1,14 @@
 import React from 'react';
 import './Header.sass'
+import {NavLink} from "react-router-dom";
 
 const Header = () => {
 	return (
 		<header className={'header'}>
 			<div className="container">
-				<a href="" className="logo-go-hom">
+				<NavLink to={'/'} className="logo-go-hom">
 					<div className="logo"><span>НЕ</span> Вконтакте</div>
-				</a>
+				</NavLink>
 			</div>
 		</header>
 	)

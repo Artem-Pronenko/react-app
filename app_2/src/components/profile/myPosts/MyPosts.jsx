@@ -1,6 +1,7 @@
 import React from 'react';
 import c from './MyPosts.module.sass';
 import Post from './post/Post';
+import avatar from '../avatar.jpg'
 
 const MyPosts = ({posts}) => {
 
@@ -21,8 +22,11 @@ const MyPosts = ({posts}) => {
 	return (
 		<div className={c.profile_post}>
 			<div className={c.create_post}>
-				<form action="">
-					<input type="text" placeholder={'Что у вас нового?'}/>
+				<div className={c.create_post_author}>
+					<img src={avatar} alt=""/>
+				</div>
+				<form id={c.form_post} action="">
+					<input type="text" placeholder={'Что у Васъ новаго?'}/>
 				</form>
 			</div>
 
