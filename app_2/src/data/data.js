@@ -4,6 +4,7 @@ import postImg2 from './img/postImg2.jpg';
 import avatar from './img/postImg2.jpg';
 import postImg3 from './img/postImg3.jpg';
 import avatar2 from './img/postImg3.jpg';
+import {renderApp} from "../render";
 
 const data = {
 	profilePage: {
@@ -48,6 +49,22 @@ const data = {
 			{id: 3, avatar: avatar, author: 'Сакенъ Макеновъ', message: 'Привет! я твой студент!'}
 		]
 	}
+};
+
+export const addPost = (text = '') => {
+	const nevPosts = {
+		id: 3,
+		date: '17 апр. 2019',
+		imgUrl: '',
+		like: '',
+		comments: '',
+		views: 1,
+		explain: '',
+		text: text
+	};
+	data.profilePage.posts.push(nevPosts);
+	renderApp(data);
+
 };
 
 

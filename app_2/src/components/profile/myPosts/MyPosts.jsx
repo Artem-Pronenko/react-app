@@ -3,7 +3,7 @@ import c from './MyPosts.module.sass';
 import Post from './post/Post';
 import avatar from '../avatar.jpg'
 
-const MyPosts = ({posts}) => {
+const MyPosts = ({posts, addPost}) => {
 
 	const postsItem = posts.map(({date, text, imgUrl, like, comments, views, explain, id}
 	) => {
@@ -18,6 +18,14 @@ const MyPosts = ({posts}) => {
 			explain={explain}
 		/>
 	});
+	const input = React.createRef();
+	const addP = (event) => {
+		event.preventDefault();
+		let text = input.current.value;
+		addPost(text)
+		input.current.value = ''
+
+	};
 
 	return (
 		<div className={c.profile_post}>
@@ -25,8 +33,8 @@ const MyPosts = ({posts}) => {
 				<div className={c.create_post_author}>
 					<img src={avatar} alt=""/>
 				</div>
-				<form id={c.form_post} action="">
-					<input type="text" placeholder={'Что у Васъ новаго?'}/>
+				<form id={c.form_post} action="" onSubmit={addP}>
+					<input ref={input} type="text" placeholder={'Что у Васъ новаго?'}/>
 				</form>
 			</div>
 
