@@ -5,7 +5,8 @@ import avatar from '../avatar.jpg'
 
 const MyPosts = ({posts, addPost, textInput, changeInput}) => {
 
-	const postsItem = posts.map(({date, text, imgUrl, like, comments, views, explain, id}
+	const postsItem = posts.map((
+		{date, text, imgUrl, like, comments, views, explain, id}
 	) => {
 		return <Post
 			key={id}

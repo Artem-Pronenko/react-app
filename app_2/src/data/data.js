@@ -4,7 +4,9 @@ import postImg2 from './img/postImg2.jpg';
 import avatar from './img/postImg2.jpg';
 import postImg3 from './img/postImg3.jpg';
 import avatar2 from './img/postImg3.jpg';
-import {renderApp} from "../render";
+
+let renderApp = () => {
+};
 
 
 const data = {
@@ -73,6 +75,10 @@ export const addPost = () => {
 export const changeInput = (text) => {
 	data.profilePage.textInput = text;
 	renderApp(data);
+};
+
+export const subscribe = (listener) => {
+	renderApp = listener;
 };
 
 export default data
