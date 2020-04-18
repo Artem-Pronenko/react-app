@@ -5,14 +5,15 @@ import App from './App';
 //import * as serviceWorker from './serviceWorker';
 //import data, {addPost} from './data/data';
 import {BrowserRouter} from "react-router-dom";
-import {addPost} from './data/data'
+import {addPost, changeInput} from './data/data';
+
 
 export const renderApp = (data) => {
 	ReactDOM.render(
 		<React.StrictMode>
 
 			<BrowserRouter>
-				<App data={data} addPost={addPost}/>
+				<App data={data} addPost={addPost} changeInput={changeInput}/>
 			</BrowserRouter>
 
 		</React.StrictMode>,

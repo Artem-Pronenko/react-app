@@ -6,6 +6,7 @@ import postImg3 from './img/postImg3.jpg';
 import avatar2 from './img/postImg3.jpg';
 import {renderApp} from "../render";
 
+
 const data = {
 	profilePage: {
 		posts: [
@@ -39,7 +40,8 @@ const data = {
 				explain: '',
 				text: 'Действительно годный эвент. трёхдневная конференция от WebDev Summit окончена, было действительно круто. очень много полезной информации, от профессионалов, очень плотная подача. было очень интересно и круто. Попытаюсь попасть к вам на курсы. Жду следующего ивента. советую всем.#webdevsummit #webdevsummit2019'
 			},
-		]
+		],
+		textInput: ''
 	},
 	dialogPage: {
 		dataMessage: [
@@ -51,7 +53,7 @@ const data = {
 	}
 };
 
-export const addPost = (text = '') => {
+export const addPost = () => {
 	let id = data.profilePage.posts[0].id - 1;
 	const nevPosts = {
 		id: id--,
@@ -61,12 +63,22 @@ export const addPost = (text = '') => {
 		comments: '',
 		views: 1,
 		explain: '',
-		text: text
+		text: data.profilePage.textInput
 	};
 	data.profilePage.posts.unshift(nevPosts);
+	data.profilePage.textInput = '';
 	renderApp(data);
-
 };
 
+export const changeInput = (text) => {
+	data.profilePage.textInput = text;
+	renderApp(data);
+};
 
 export default data
+
+
+
+
+
+

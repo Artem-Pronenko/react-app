@@ -3,12 +3,12 @@
 //import './index.sass';
 //import App from './App';
 import * as serviceWorker from './serviceWorker';
-import data, {addPost} from './data/data';
+import data from './data/data';
 //import {BrowserRouter} from "react-router-dom";
 import {renderApp} from "./render";
 
 
-renderApp(data, addPost);
+renderApp(data);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
