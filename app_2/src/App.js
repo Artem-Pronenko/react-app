@@ -7,8 +7,8 @@ import Profile from "./components/profile/Profile";
 import Dialogs from "./components/dialogs/Dialogs";
 import {Route} from "react-router-dom";
 
-const App = ({data, addPost, changeInput}) => {
-	const {profilePage, dialogPage} = data;
+const App = ({state, addPost, changeInput}) => {
+	const {profilePage, dialogPage} = state;
 	return (
 		<div className="app-wrapper">
 			<Header/>

@@ -4,15 +4,19 @@ import App from './App';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from "react-router-dom";
-import data, {addPost, changeInput, subscribe} from './data/data';
+import store from './data/data';
 
 
-const renderApp = (data) => {
+const renderApp = (state) => {
 	ReactDOM.render(
 		<React.StrictMode>
 
 			<BrowserRouter>
-				<App data={data} addPost={addPost} changeInput={changeInput}/>
+				<App
+					state={state}
+					addPost={store.addPost.bind(store)}
+					changeInput={store.changeInput.bind(store)}
+				/>
 			</BrowserRouter>
 
 		</React.StrictMode>,
@@ -20,9 +24,9 @@ const renderApp = (data) => {
 	);
 };
 
-renderApp(data);
+renderApp(store.getState());
 
-subscribe(renderApp);
+store.subscribe(renderApp);
 
 
 // If you want your app to work offline and load faster, you can change
