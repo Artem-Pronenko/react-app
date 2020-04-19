@@ -23,7 +23,7 @@ const App = ({state, dispatch}) => {
 				</Route>
 
 				<Route exact path={'/dialogs/d1'}>
-					<MyDialog1/>
+					<MyDialog1 dispatch={dispatch} dialogPage={state.dialogPage}/>
 				</Route>
 
 			</div>

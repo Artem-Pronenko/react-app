@@ -6,7 +6,9 @@ import postImg3 from './img/postImg3.jpg';
 import avatar2 from './img/postImg3.jpg';
 
 const ADD_POST = 'ADD-POST',
-	CHANGE_INPUT = 'CHANGE-INPUT';
+	CHANGE_INPUT_POST = 'CHANGE-INPUT-POST',
+	CHANGE_INPUT_MESSAGE = 'CHANGE-INPUT-MESSAGE',
+	SEND_MESSAGE = 'SEND-MESSAGE';
 
 const store = {
 	_state: {
@@ -75,7 +77,14 @@ const store = {
 					message: 'Привет! я твой студент!',
 					linkHref: `/d4`
 				}
-			]
+			],
+			messageD1: [
+				{
+					id: 0, message: 'Привет привет!!'
+				},
+
+			],
+			newMessageBody: '',
 		}
 	},
 	_renderApp() {
@@ -103,15 +112,30 @@ const store = {
 			this._state.profilePage.textInput = '';
 			this._renderApp(this._state)
 
-		} else if (action.type === CHANGE_INPUT) {
+		} else if (action.type === CHANGE_INPUT_POST) {
 			this._state.profilePage.textInput = action.text;
 			this._renderApp(this._state);
+
+		} else if (action.type === CHANGE_INPUT_MESSAGE) {
+			this._state.dialogPage.newMessageBody = action.text;
+			this._renderApp(this._state)
+
+		} else if (action.type === SEND_MESSAGE) {
+			const message = this._state.dialogPage.newMessageBody;
+			let id = this._state.dialogPage.messageD1[this._state.dialogPage.messageD1.length - 1].id;
+			this._state.dialogPage.newMessageBody = '';
+			this._state.dialogPage.messageD1.push({id: ++id, message: message});
+			this._renderApp(this._state)
 		}
 	}
 };
 export const addPostActionCreator = () => ({type: ADD_POST});
-export const textChangeActionCreator = text => ({type: CHANGE_INPUT, text: text});
+export const textChangeActionCreator = text => ({type: CHANGE_INPUT_POST, text: text});
 
+export const messageChangeActionCreator = text => ({type: CHANGE_INPUT_MESSAGE, text: text});
+export const addMessageActionCreator = () => ({type: SEND_MESSAGE});
+
+window.store = store;
 export default store
 
 
