@@ -47,15 +47,34 @@ const store = {
 		},
 		dialogPage: {
 			dataMessage: [
-				{id: 0, avatar: avatar, author: 'Андрей Ивановъ', message: 'Зашел!'},
+				{
+					id: 0,
+					avatar: avatar,
+					author: 'Андрей Ивановъ',
+					message: 'Зашел!',
+					linkHref: `/d1`
+				},
 				{
 					id: 1,
 					avatar: avatar2,
 					author: 'Ильдаръ Фазуловъ',
-					message: 'Привет! я твой студент. Добавь в группу плиз'
+					message: 'Привет! я твой студент. Добавь в группу плиз',
+					linkHref: `/d2`
 				},
-				{id: 2, avatar: avatar3, author: 'Даня Ивановъ', message: 'Добавь в группу плиз'},
-				{id: 3, avatar: avatar, author: 'Сакенъ Макеновъ', message: 'Привет! я твой студент!'}
+				{
+					id: 2,
+					avatar: avatar3,
+					author: 'Даня Ивановъ',
+					message: 'Добавь в группу плиз',
+					linkHref: `/d3`
+				},
+				{
+					id: 3,
+					avatar: avatar,
+					author: 'Сакенъ Макеновъ',
+					message: 'Привет! я твой студент!',
+					linkHref: `/d4`
+				}
 			]
 		}
 	},

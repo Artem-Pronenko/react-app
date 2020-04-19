@@ -6,19 +6,23 @@ import c from './DialogContent.module.sass';
 
 const DialogContent = ({dataMessage}) => {
 
-	const message = dataMessage.map(el => {
-		return <DialogMessage
-			key={el.id}
-			avatar={el.avatar}
-			author={el.author}
-			textMessage={el.message}/>
+	const dialog = dataMessage.map(el => {
+		return (
+			<DialogMessage
+				key={el.id}
+				avatar={el.avatar}
+				author={el.author}
+				textMessage={el.message}
+				linkHref={`/dialogs${el.linkHref}`}
+			/>
+		)
 	});
 
 	return (
 		<div className={c.dialog_column}>
 			<DialogSearch/>
 
-			{message}
+			{dialog}
 
 		</div>
 	)
