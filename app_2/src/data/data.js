@@ -56,34 +56,36 @@ const store = {
 			]
 		}
 	},
-	getState() {
-		return this._state;
-	},
 	_renderApp() {
 	},
-	addPost() {
-		let id = this._state.profilePage.posts[0].id - 1;
-		const nevPosts = {
-			id: id--,
-			date: '17 апр. 2020',
-			imgUrl: '',
-			like: '',
-			comments: '',
-			views: 1,
-			explain: '',
-			text: this._state.profilePage.textInput
-		};
-		this._state.profilePage.posts.unshift(nevPosts);
-		this._state.profilePage.textInput = '';
-		this._renderApp(this._state)
-	},
-	changeInput(text) {
-		this._state.profilePage.textInput = text;
-		this._renderApp(this._state);
+	getState() {
+		return this._state;
 	},
 	subscribe(listener) {
 		this._renderApp = listener;
 	},
+	dispatch(action) {
+		if (action.type === 'ADD-POST') {
+			let id = this._state.profilePage.posts[0].id - 1;
+			const nevPosts = {
+				id: id--,
+				date: '17 апр. 2020',
+				imgUrl: '',
+				like: '',
+				comments: '',
+				views: 1,
+				explain: '',
+				text: this._state.profilePage.textInput
+			};
+			this._state.profilePage.posts.unshift(nevPosts);
+			this._state.profilePage.textInput = '';
+			this._renderApp(this._state)
+
+		} else if (action.type === 'CHANGE-INPUT') {
+			this._state.profilePage.textInput = action.text;
+			this._renderApp(this._state);
+		}
+	}
 };
 
 export default store

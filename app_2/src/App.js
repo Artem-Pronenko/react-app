@@ -7,7 +7,7 @@ import Profile from "./components/profile/Profile";
 import Dialogs from "./components/dialogs/Dialogs";
 import {Route} from "react-router-dom";
 
-const App = ({state, addPost, changeInput}) => {
+const App = ({state, dispatch}) => {
 	const {profilePage, dialogPage} = state;
 	return (
 		<div className="app-wrapper">
@@ -15,7 +15,7 @@ const App = ({state, addPost, changeInput}) => {
 			<div className="container">
 				<Nav/>
 				<Route exact path={'/profile'}>
-					<Profile dataPost={profilePage} addPost={addPost} changeInput={changeInput}/>
+					<Profile dataPost={profilePage} dispatch={dispatch}/>
 				</Route>
 				<Route exact path={'/dialogs'}>
 					<Dialogs dataDialogs={dialogPage}/>

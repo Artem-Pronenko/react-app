@@ -14,8 +14,8 @@ const renderApp = (state) => {
 			<BrowserRouter>
 				<App
 					state={state}
-					addPost={store.addPost.bind(store)}
-					changeInput={store.changeInput.bind(store)}
+					dispatch={store.dispatch.bind(store)}
+
 				/>
 			</BrowserRouter>
 

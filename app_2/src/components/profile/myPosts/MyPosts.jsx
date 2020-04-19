@@ -3,7 +3,7 @@ import c from './MyPosts.module.sass';
 import Post from './post/Post';
 import avatar from '../avatar.jpg'
 
-const MyPosts = ({posts, addPost, textInput, changeInput}) => {
+const MyPosts = ({posts, textInput, dispatch}) => {
 
 	const postsItem = posts.map((
 		{date, text, imgUrl, like, comments, views, explain, id}
@@ -22,10 +22,9 @@ const MyPosts = ({posts, addPost, textInput, changeInput}) => {
 	const input = React.createRef();
 	const addP = event => {
 		event.preventDefault();
-		addPost();
-
+		dispatch({type: 'ADD-POST'});
 	};
-	const textChange = () => changeInput(input.current.value);
+	const textChange = () => dispatch({type: 'CHANGE-INPUT', text: input.current.value});
 
 	return (
 		<div className={c.profile_post}>
