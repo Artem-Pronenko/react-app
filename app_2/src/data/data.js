@@ -5,6 +5,9 @@ import avatar from './img/postImg2.jpg';
 import postImg3 from './img/postImg3.jpg';
 import avatar2 from './img/postImg3.jpg';
 
+const ADD_POST = 'ADD-POST',
+	CHANGE_INPUT = 'CHANGE-INPUT';
+
 const store = {
 	_state: {
 		profilePage: {
@@ -65,7 +68,7 @@ const store = {
 		this._renderApp = listener;
 	},
 	dispatch(action) {
-		if (action.type === 'ADD-POST') {
+		if (action.type === ADD_POST) {
 			let id = this._state.profilePage.posts[0].id - 1;
 			const nevPosts = {
 				id: id--,
@@ -81,12 +84,14 @@ const store = {
 			this._state.profilePage.textInput = '';
 			this._renderApp(this._state)
 
-		} else if (action.type === 'CHANGE-INPUT') {
+		} else if (action.type === CHANGE_INPUT) {
 			this._state.profilePage.textInput = action.text;
 			this._renderApp(this._state);
 		}
 	}
 };
+export const addPostActionCreator = () => ({type: ADD_POST});
+export const textChangeActionCreator = text => ({type: CHANGE_INPUT, text: text});
 
 export default store
 

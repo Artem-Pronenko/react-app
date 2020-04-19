@@ -1,7 +1,8 @@
 import React from 'react';
 import c from './MyPosts.module.sass';
 import Post from './post/Post';
-import avatar from '../avatar.jpg'
+import avatar from '../avatar.jpg';
+import {addPostActionCreator, textChangeActionCreator} from "../../../data/data";
 
 const MyPosts = ({posts, textInput, dispatch}) => {
 
@@ -22,9 +23,9 @@ const MyPosts = ({posts, textInput, dispatch}) => {
 	const input = React.createRef();
 	const addP = event => {
 		event.preventDefault();
-		dispatch({type: 'ADD-POST'});
+		dispatch(addPostActionCreator());
 	};
-	const textChange = () => dispatch({type: 'CHANGE-INPUT', text: input.current.value});
+	const textChange = () => dispatch(textChangeActionCreator(input.current.value));
 
 	return (
 		<div className={c.profile_post}>
