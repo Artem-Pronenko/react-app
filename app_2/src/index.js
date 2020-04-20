@@ -4,7 +4,7 @@ import App from './App';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from "react-router-dom";
-import store from './data/data';
+import store from './redux/redux-store';
 
 
 const renderApp = (state) => {
@@ -26,7 +26,9 @@ const renderApp = (state) => {
 
 renderApp(store.getState());
 
-store.subscribe(renderApp);
+store.subscribe(() => {
+	renderApp(store.getState())
+});
 
 
 // If you want your app to work offline and load faster, you can change

@@ -2,7 +2,7 @@ import React from 'react';
 import c from './MyPosts.module.sass';
 import Post from './post/Post';
 import avatar from '../avatar.jpg';
-import {addPostActionCreator, textChangeActionCreator} from "../../../data/profileReducer";
+import {addPostActionCreator, textChangeActionCreator} from "../../../redux/profileReducer";
 
 const MyPosts = ({posts, textInput, dispatch}) => {
 

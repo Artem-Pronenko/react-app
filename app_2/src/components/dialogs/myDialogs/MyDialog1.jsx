@@ -2,7 +2,7 @@ import React from 'react';
 import c from './MyDialogs.module.sass';
 import DialogsMenu from "../dialogMenu/DialogMenu";
 import DialogHeader from "./DialogHeader";
-import {addMessageActionCreator, messageChangeActionCreator} from "../../../data/dialogsReducer";
+import {addMessageActionCreator, messageChangeActionCreator} from "../../../redux/dialogsReducer";
 
 
 const MyDialog1 = ({dialogPage, dispatch}) => {
