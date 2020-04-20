@@ -1,9 +1,9 @@
 import React from 'react';
 import './Profile.sass';
 import avatar from './avatar.jpg'
-import MyPosts from "./myPosts/MyPosts";
+import MyPostsContainer from "./myPosts/MyPostsContainer";
 
-const Profile = ({dataPost, dispatch}) => {
+const Profile = props => {
 	return (
 		<div className={'content'}>
 
@@ -20,11 +20,9 @@ const Profile = ({dataPost, dispatch}) => {
 
 				<div className={'column_info'}>
 					<div className={'profile_info'}>name and profile info</div>
-					<MyPosts
-						posts={dataPost.posts}
-						textInput={dataPost.textInput}
-						dispatch={dispatch}
-					/>
+
+					<MyPostsContainer store={props.store}/>
+
 				</div>
 			</div>
 

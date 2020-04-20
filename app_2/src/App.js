@@ -6,24 +6,24 @@ import Nav from "./components/nav/Nav";
 import Profile from "./components/profile/Profile";
 import Dialogs from "./components/dialogs/Dialogs";
 import {Route} from "react-router-dom";
-import MyDialog1 from "./components/dialogs/myDialogs/MyDialog1";
+import MyDialog1Container from "./components/dialogs/myDialogs/MyDialog1Container";
 
-const App = ({state, dispatch}) => {
-	const {profilePage, dialogPage} = state;
+const App = props => {
+
 	return (
 		<div className="app-wrapper">
 			<Header/>
 			<div className="container">
 				<Nav/>
 				<Route exact path={'/profile'}>
-					<Profile dataPost={profilePage} dispatch={dispatch}/>
+					<Profile store={props.store}/>
 				</Route>
 				<Route exact path={'/dialogs'}>
-					<Dialogs dataDialogs={dialogPage}/>
+					<Dialogs store={props.store}/>
 				</Route>
 
 				<Route exact path={'/dialogs/d1'}>
-					<MyDialog1 dispatch={dispatch} dialogPage={state.dialogPage}/>
+					<MyDialog1Container store={props.store}/>
 				</Route>
 
 			</div>

@@ -2,24 +2,22 @@ import React from 'react';
 import c from './MyDialogs.module.sass';
 import DialogsMenu from "../dialogMenu/DialogMenu";
 import DialogHeader from "./DialogHeader";
-import {addMessageActionCreator, messageChangeActionCreator} from "../../../redux/dialogsReducer";
 
 
-const MyDialog1 = ({dialogPage, dispatch}) => {
-	const newMessage = dialogPage.messageD1.map(el => {
-		return (
-			<div key={el.id} className={c.message}>{el.message}</div>
-		)
+const MyDialog1 = ({addMessage, changeMessage, message, newMessageBody}) => {
+	const newMessage = message.map(el => {
+		return <div key={el.id} className={c.message}>{el.message}</div>
 	});
 
-	const addMessage = event => {
+	const onAddMessage = event => {
 		event.preventDefault();
-		dispatch(addMessageActionCreator())
-
+		addMessage();
+		//dispatch(addMessageActionCreator())
 	};
 
-	const changeMessage = (event) => {
-		dispatch(messageChangeActionCreator(event.target.value));
+	const onChangeMessage = (event) => {
+		changeMessage(event.target.value);
+		//dispatch(messageChangeActionCreator(event.target.value));
 	};
 
 	return (
@@ -31,10 +29,10 @@ const MyDialog1 = ({dialogPage, dispatch}) => {
 
 				</div>
 				<div className={c.dialog_input}>
-					<form onSubmit={addMessage} action="">
+					<form onSubmit={onAddMessage} action="">
 						<textarea
-							onChange={changeMessage}
-							value={dialogPage.newMessageBody}
+							onChange={onChangeMessage}
+							value={newMessageBody}
 							cols="45"
 							rows="5"
 							placeholder={'Ваше смс'}>
