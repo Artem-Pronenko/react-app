@@ -53,7 +53,7 @@ export const dialogsReducer = (state = initialState, action) => {
 			return state;
 		case SEND_MESSAGE:
 			const message = state.newMessageBody;
-			let id = state.messageD1[state.messageD1.length - 1].id;
+			let id = state.messageD1[0] !== undefined ? state.messageD1[state.messageD1.length - 1].id : 0;
 			state.newMessageBody = '';
 			state.messageD1.push({id: ++id, message: message});
 			return state;

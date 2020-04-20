@@ -1,7 +1,7 @@
 import React from 'react';
 import c from './MyDialogs.module.sass';
 import DialogsMenu from "../dialogMenu/DialogMenu";
-import DialogHeader from "./DialogHeader";
+import DialogHeader from "./dialogHeader/DialogHeader";
 
 
 const MyDialog1 = ({addMessage, changeMessage, message, newMessageBody}) => {
@@ -23,25 +23,29 @@ const MyDialog1 = ({addMessage, changeMessage, message, newMessageBody}) => {
 	return (
 		<div className={c.dialog_wrap}>
 			<div className={c.dialog_column}>
-				<DialogHeader/>
-				<div className={c.message_wrap}>
-					{newMessage}
+				<div className={c.dialog}>
+					<DialogHeader/>
+
+					<div className={c.dialog_message}>
+						<div className={c.message_block}>
+							{newMessage}
+						</div>
+					</div>
 
 				</div>
-				<div className={c.dialog_input}>
+				<div className={c.submit}>
 					<form onSubmit={onAddMessage} action="">
-						<textarea
+						<input
 							onChange={onChangeMessage}
 							value={newMessageBody}
-							cols="45"
-							rows="5"
+							type={'text'}
 							placeholder={'Ваше смс'}>
-						</textarea>
+						</input>
 						<button className={c.btn_submit} type='submit'>Отправить</button>
 					</form>
-
 				</div>
 			</div>
+
 			<DialogsMenu/>
 		</div>
 	)

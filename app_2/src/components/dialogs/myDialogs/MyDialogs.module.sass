@@ -1,67 +1,45 @@
 @import "src/variables"
 
-
-.dialog_head
-  display: block
-  margin: -24px auto 0 -1px
-  padding: 13px 37px
-  border-top: solid 24px #edeef0
-  border-left: solid 1px #edeef0
-  border-right: solid 1px #edeef0
-  border-bottom: 1px solid #d7d8db
-  position: fixed
-  max-width: 653px
-  width: 59%
-  z-index: 10
-  background-color: #fff
-
-.dialog_head_wrap
-  padding-bottom: 40px
-
 .dialog
-  &_column
-    background-color: $white
-    flex-basis: 74%
-    height: 550px
-    overflow-y: auto
-    position: relative
-    +border
+  overflow-y: auto
+  height: 640px
 
   &_wrap
     display: flex
     justify-content: space-between
 
-.message
-  background-color: red
-  padding: 5px 10px
-  margin-bottom: 10px
+  &_column
+    background-color: $white
+    flex-basis: 74%
+    position: relative
+    +border
 
-.message_wrap
-  display: flex
-  justify-content: flex-end
-  align-items: flex-start
-  flex-direction: column
+  &_message
+    min-height: 100%
+    display: flex
+    align-items: flex-end
 
-.dialog
-  &_input
-    position: absolute
-    bottom: 0
+  .message_block
+    color: #4e81b6
     width: 100%
-    border-top: 1px solid $textGrey
+    padding-bottom: 110px
+
+.submit
+  background-color: #edeef0
+  position: absolute
+  bottom: 0
+  width: 100%
+  padding: 10px 0 10px 50px
+
+input
+  padding: 10px 100px 10px 5px
+
+.message
+  padding: 5px 10px
+  border: 1px solid black
+  margin-bottom: 10px
 
 .btn_submit
   background-color: #4e81b6
   padding: 8px 19px
   position: relative
-  margin-left: -15px
-
-textarea
-  margin-left: 30px
-  border: 1px solid #bbbb
-  border-bottom: none
-  padding: 2px 5px
-
-@media screen and (max-width: 1120px)
-  .search
-    width: 59.4%
-    margin-top: -23px
