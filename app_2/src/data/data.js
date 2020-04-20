@@ -4,11 +4,9 @@ import postImg2 from './img/postImg2.jpg';
 import avatar from './img/postImg2.jpg';
 import postImg3 from './img/postImg3.jpg';
 import avatar2 from './img/postImg3.jpg';
+import profileReducer from "./profileReducer";
+import dialogsReducer from "./dialogsReducer";
 
-const ADD_POST = 'ADD-POST',
-	CHANGE_INPUT_POST = 'CHANGE-INPUT-POST',
-	CHANGE_INPUT_MESSAGE = 'CHANGE-INPUT-MESSAGE',
-	SEND_MESSAGE = 'SEND-MESSAGE';
 
 const store = {
 	_state: {
@@ -96,44 +94,12 @@ const store = {
 		this._renderApp = listener;
 	},
 	dispatch(action) {
-		if (action.type === ADD_POST) {
-			let id = this._state.profilePage.posts[0].id - 1;
-			const nevPosts = {
-				id: id--,
-				date: '17 апр. 2020',
-				imgUrl: '',
-				like: '',
-				comments: '',
-				views: 1,
-				explain: '',
-				text: this._state.profilePage.textInput
-			};
-			this._state.profilePage.posts.unshift(nevPosts);
-			this._state.profilePage.textInput = '';
-			this._renderApp(this._state)
-
-		} else if (action.type === CHANGE_INPUT_POST) {
-			this._state.profilePage.textInput = action.text;
-			this._renderApp(this._state);
-
-		} else if (action.type === CHANGE_INPUT_MESSAGE) {
-			this._state.dialogPage.newMessageBody = action.text;
-			this._renderApp(this._state)
-
-		} else if (action.type === SEND_MESSAGE) {
-			const message = this._state.dialogPage.newMessageBody;
-			let id = this._state.dialogPage.messageD1[this._state.dialogPage.messageD1.length - 1].id;
-			this._state.dialogPage.newMessageBody = '';
-			this._state.dialogPage.messageD1.push({id: ++id, message: message});
-			this._renderApp(this._state)
-		}
+		this._state.profilePage = profileReducer(this._state.profilePage, action);
+		this._state.dialogPage = dialogsReducer(this._state.dialogPage, action);
+		this._renderApp(this._state);
 	}
 };
-export const addPostActionCreator = () => ({type: ADD_POST});
-export const textChangeActionCreator = text => ({type: CHANGE_INPUT_POST, text: text});
 
-export const messageChangeActionCreator = text => ({type: CHANGE_INPUT_MESSAGE, text: text});
-export const addMessageActionCreator = () => ({type: SEND_MESSAGE});
 
 window.store = store;
 export default store
